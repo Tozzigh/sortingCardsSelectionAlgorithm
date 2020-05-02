@@ -18,10 +18,6 @@ button{
 p{
     font-size: 25px;
 }
-#sortList{
-    display: flex;
-    flex-direction: column;
-}
 /*---------------------------------------------------------*/
 .cards{
     margin: 0px 10px;
