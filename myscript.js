@@ -7,7 +7,7 @@ var arrayCardNumb = [];
 function drawCards(){
         var randColor = random(arrayColors);
         var randSeed = random(arraySeeds);
-        var randNumb = random(arrayNumber);
+        var randNumb = random(arrayNumber);  
 
 	    card = document.createElement("div");       
         card.className = "cards";
@@ -15,7 +15,6 @@ function drawCards(){
         card.style.width = "50px";
         card.style.borderRadius = "10%";
         card.style.backgroundColor = "white";
-        card.id = randNumb;
 
         seed = document.createElement("div");   
         seed.className = "seed";     
@@ -43,7 +42,21 @@ function drawCards(){
         card.appendChild(seed2);
         document.getElementById("cardsList").appendChild( card );
 
-        arrayCardNumb.push(randNumb);        
+        if(randNumb==="J"){
+            card.id = "11";
+        }else if(randNumb==="Q"){
+            card.id = "12";
+        }else if(randNumb==="K"){
+            card.id = "13";
+        }else{
+            card.id = randNumb;
+        }
+        
+        while(arrayCardNumb.includes(card.id)){
+            card.id = (parseFloat(card.id)+0.1).toString()
+        } 
+
+        arrayCardNumb.push(card.id)
 }  
         
 function random(a){
@@ -56,8 +69,14 @@ function cardNumb(){
     }
 }
 
-function sortNumb(){    
-    
-    console.log(arrayCardNumb.sort())
+function sortNumb(){
+    for(x in arrayCardNumb){
+        document.getElementById("sortList").appendChild(document.getElementById(arrayCardNumb[x]).cloneNode(true))
+    }
 
+
+
+
+
+    console.log(arrayCardNumb)
 }
