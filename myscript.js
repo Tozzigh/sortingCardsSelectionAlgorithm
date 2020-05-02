@@ -3,6 +3,7 @@ var arraySeeds = ["\u2660", "\u2663", "\u2665", "\u2666"];
 var arrayNumber =["1","2","3","4","5","6","7","8","9","10","J","Q","K"];
 
 var arrayCardNumb = [];
+var arrayObjects = [];
 
 function drawCards(){
         var randColor = random(arrayColors);
@@ -57,6 +58,7 @@ function drawCards(){
         } 
 
         arrayCardNumb.push(card.id)
+        arrayObjects.push(card)
 }  
         
 function random(a){
@@ -70,13 +72,27 @@ function cardNumb(){
 }
 
 function sortNumb(){
-    for(x in arrayCardNumb){
-        document.getElementById("sortList").appendChild(document.getElementById(arrayCardNumb[x]).cloneNode(true))
+    
+    for(let x=0; x<arrayCardNumb.length; x++){
+        var min = x;
+        for(let y=x+1; y<arrayCardNumb.length; y++){
+            if(parseFloat(arrayCardNumb[y])<parseFloat(arrayCardNumb[min])){
+                min = y;    
+            }                       
+        }
+        if(x != min){
+            swap(arrayCardNumb, x, min)
+            swap(arrayObjects, x, min)
+        }              
+    
+        for(z in arrayObjects) {
+            document.body.appendChild((arrayObjects[z]).cloneNode(true))
+        }
     }
+}
 
-
-
-
-
-    console.log(arrayCardNumb)
+function swap(array, x, min){
+    var temp = array[x];
+    array[x] = array[min];
+    array[min] = temp;
 }
