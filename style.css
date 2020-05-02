@@ -1,0 +1,45 @@
+body{
+    background-color: green;
+}
+.firstLine{
+    display: flex; 
+    align-items: center;
+    height: 100px;
+    font-size: 25px;
+}
+.firstLine > div{
+    margin: 0px 10px;
+}
+button{
+    height: 30px;
+    width: 90px;
+    text-align: center;
+}
+p{
+    font-size: 25px;
+}
+#sortList{    
+    margin: 20px 10px;
+}
+/*---------------------------------------------------------*/
+.cards{
+    margin: 0px 10px;
+    position: relative;
+    display: inline-block;
+}
+.seed{
+    position: relative;
+    top: -5%;
+    left: 0%;
+}
+.seed2{
+    position: relative;
+    top: 35%;
+    left: 65%;
+}
+.numb{
+    position: absolute;
+    top: 35%;
+    left: 35%;
+}
+/*---------------------------------------------------------*/
