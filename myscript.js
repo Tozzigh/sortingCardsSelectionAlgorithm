@@ -74,31 +74,35 @@ function cardNumb() {
 }
 
 function sortNumb() {
-    for (let x = 0; x < arrayCardNumb.length-1; x++) {
+    var count = 0;
+    for (let x = 0; x < arrayCardNumb.length - 1; x++) {
         var min = x;
         for (let y = x + 1; y < arrayCardNumb.length; y++) {
             if (parseFloat(arrayCardNumb[y]) < parseFloat(arrayCardNumb[min])) {
-                min = y;                
-            }            
-        }
-        if (x != min) {
-            swap(arrayCardNumb, min, x)
-            swap(arrayObjects, min, x)
-            for (z in arrayObjects) {
-                holder = document.createElement("div");
-                holder.id = "holder"+z.toString();
-                document.getElementById("sortList").appendChild(holder);
-                document.getElementById("holder"+z.toString()).appendChild((arrayObjects[z]).cloneNode(true));                  
+                min = y;
             }
-           
         }        
-            
-    }
-    
+        if (x != min) {            
+            var arrayHolder = [];
+            swap(arrayCardNumb, min, x);
+            swap(arrayObjects, min, x);
+            for(let x in arrayObjects){
+                arrayHolder.push((arrayObjects[x]).cloneNode(true));
+                sortLi = document.createElement("div");
+                sortLi.id = "sortLi"+x.toString();
+                document.getElementById("sortList").appendChild(sortLi);                
+            }            
+            for(let x in arrayHolder){        
+                document.getElementById("sortLi"+(count.toString())).appendChild((arrayHolder[x]));
+            }
+            count = count + 1;
+        }
+    } 
 }
 
 function swap(array, x, min) {
     var temp = array[x];
     array[x] = array[min];
     array[min] = temp;
+    return array;
 }

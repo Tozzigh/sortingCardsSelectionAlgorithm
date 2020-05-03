@@ -18,6 +18,9 @@ button{
 p{
     font-size: 25px;
 }
+.sortlist{
+    display: inline-flex;
+}
 /*---------------------------------------------------------*/
 .cards{
     margin: 0px 10px;
