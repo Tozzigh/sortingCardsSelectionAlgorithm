@@ -81,23 +81,28 @@ function sortNumb() {
             if (parseFloat(arrayCardNumb[y]) < parseFloat(arrayCardNumb[min])) {
                 min = y;
             }
-        }        
-        if (x != min) {            
+        }
+        if (x != min) {
             var arrayHolder = [];
             swap(arrayCardNumb, min, x);
             swap(arrayObjects, min, x);
-            for(let x in arrayObjects){
+            for (let x in arrayObjects) {
                 arrayHolder.push((arrayObjects[x]).cloneNode(true));
                 sortLi = document.createElement("div");
-                sortLi.id = "sortLi"+x.toString();
-                document.getElementById("sortList").appendChild(sortLi);                
-            }            
-            for(let x in arrayHolder){        
-                document.getElementById("sortLi"+(count.toString())).appendChild((arrayHolder[x]));
+                sortLi.id = "sortLi" + x.toString();
+                sortLi.style.margin = "0px 0 30px 0px";
+                document.getElementById("sortList").appendChild(sortLi);
+
+            }
+            indexSort = document.createTextNode(count.toString());
+            document.getElementById("sortLi" + (count.toString())).appendChild(indexSort);
+            for (let x in arrayHolder) {
+                document.getElementById("sortLi" + (count.toString())).appendChild((arrayHolder[x]));
+
             }
             count = count + 1;
         }
-    } 
+    }
 }
 
 function swap(array, x, min) {

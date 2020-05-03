@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Sorting Cards</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="container">
-        <div class="firstLine">
-            <div><label for="original">Original:</label></div>
-            <div><input type="text" id="original" value=""></div>
-            <div><button id="draw" onclick="cardNumb()" >Draw</button></div>
-            <div><button id="sort" onclick="sortNumb()">Sort</button></div>
-        </div>
-        <div id="cardsList"></div>
-        <p>Select Sort Log:</p>
-        
-    </div>
-        <div id="sortList"></div>   
 
-    <script src="myscript.js"></script>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<title>Sorting Cards</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="firstLine">
+			<div><label for="original">Original:</label></div>
+			<div><input type="text" id="original" value=""></div>
+				<div><button id="draw" onclick="cardNumb()" >Draw</button></div>
+				<div><button id="sort" onclick="sortNumb()">Sort</button></div>
+			</div>
+			<div id="cardsList"></div>
+			<p>Select Sort Log:</p>
+		</div>
+		<div id="sortList"></div>
+
+		<script src="myscript.js"></script>
+</body>
+
 </html>

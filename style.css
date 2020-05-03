@@ -30,16 +30,17 @@ p{
 .seed{
     position: relative;
     top: -5%;
-    left: 0%;
+    left: 2%;
 }
 .seed2{
     position: relative;
     top: 35%;
-    left: 65%;
+    left: 55%;
 }
 .numb{
     position: absolute;
     top: 35%;
-    left: 35%;
+    left: 50%;
+    margin-left: -25%;
 }
 /*---------------------------------------------------------*/
